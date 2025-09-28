@@ -1,18 +1,11 @@
 "use client";
 
-import { Squares } from "@/components/ui/squares-background";
+// import { Squares } from "@/components/ui/squares-background";
 
 export function Skills() {
   return (
-    <div className="relative h-screen  overflow-hidden bg-[#060606]">
+    <div className="h-[100vh]  overflow-hidden bg-[#9e2525]">
       {/* Animated Squares Background */}
-      <Squares
-        direction="left"
-        speed={0.8}
-        squareSize={80}
-        borderColor="#333"
-        hoverFillColor="#222"
-      />
     </div>
   );
 }

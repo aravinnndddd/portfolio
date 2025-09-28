@@ -1,6 +1,6 @@
-// import reactLogo from './assets/react.svg'
-
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
+
 import Navbar from "./components/navbar";
 import {
   Cursor,
@@ -8,19 +8,15 @@ import {
   CursorProvider,
 } from "./components/ui/cursorComponent";
 
-import { About } from "./homePage/hero";
+// Pages
+import { Hero } from "./homePage/hero";
 import { Skills } from "./homePage/skills";
-// import { Artworks } from "./Components/artworks";
-// import Navbar from "./Components/navbar";
-// import { Element } from "react-scroll";
-// import Skills from "./Components/skills";
-// import { Project } from "./Components/project";
-// import { Contact } from "./Components/contact";
-// import { Footer } from "./Components/footer";
+// import { Project } from "./pages/Projects";
 
 function App() {
   return (
-    <div className="bg-black">
+    <>
+      {" "}
       <CursorProvider>
         <Cursor>
           <svg
@@ -36,33 +32,23 @@ function App() {
         </Cursor>
 
         <CursorFollow>
-          <div className="px-3  py-1 bg-white text-black text-sm rounded-lg shadow-lg">
+          <div className="px-3 py-1 bg-white text-black text-sm rounded-lg shadow-lg">
             You
           </div>
         </CursorFollow>
       </CursorProvider>
-      <Navbar />
-
-      <About />
-      {/* Cursor Layer */}
-
-      <Skills />
-
-      {/* 
-      <Element name="artworks">
-        <Artworks />
-      </Element>
-      <Element name="projects">
-        <Project />
-      </Element>
-      <Element name="contact">
-        <Contact />
-      </Element>
-
-      <Element name="footer">
-        <Footer />
-      </Element> */}
-    </div>
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Hero />} />
+          <Route path="/skills" element={<Skills />} />
+          {/* <Route path="/artworks" element={<Artworks />} /> */}
+          {/* <Route path="/projects" element={<Project />} /> */}
+          {/* <Route path="/contact" element={<Contact />} /> */}
+          {/* <Route path="/footer" element={<Footer />} /> */}
+        </Routes>
+      </Router>
+    </>
   );
 }
 

@@ -84,7 +84,7 @@ const DcStatus: React.FC = () => {
 
   return (
     <div className="h-[70vh] flex  ">
-      <div className=":w-full  rounded-lg shadow-lg flex flex-col ">
+      <div className="w-full  rounded-lg shadow-lg flex flex-col ">
         <div className="flex flex-col mt-5 items-center justify-center">
           <div
             className={`${getStatusColor(
@@ -113,7 +113,7 @@ const DcStatus: React.FC = () => {
           </div>
         </div>
 
-        <div className="flex w-fit md:flex-row flex-col items-center gap-3 justify-center ">
+        <div className="flex w-fit flex-col items-center gap-3 justify-center ">
           {/* VS Code Activity */}
           <div className=" hover:inset-shadow-white/15 hover:shadow-2xl transition-all duration-500 ease-in  text-[12px] p-3 rounded-3xl flex flex-col items-center inset-shadow-sm inset-shadow-black  bg-white/10  w-[250px]  justify-center text-white">
             {vsCodeActivity ? (
