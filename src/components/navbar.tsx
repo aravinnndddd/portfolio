@@ -1,25 +1,19 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggleMenu = () => setIsOpen(!isOpen);
-
   return (
-    <nav className="w-full px-4 py-2  bg-black/90 sticky top-0 shadow lg:px-8 lg:py-3 backdrop-blur-sm backdrop-saturate-150 z-[10]">
-      <div className="container flex flex-wrap items-center justify-between font-semibold mx-auto text-white ">
+    <nav className="w-[70%] rounded-4xl px-4 py-2 mx-auto bg-white/90 sticky top-5 shadow lg:px-8 lg:py-3 backdrop-blur-sm backdrop-saturate-150 z-[10]">
+      <div className="container flex flex-wrap items-center justify-center font-semibold mx-auto text-black ">
         {/* Logo */}
         <Link to="/">
-          <a className="mr-4 block hover:cursor-none py-1.5 text-xl text-white  font-bold">
+          <a className="mr-4 block hover:cursor-none py-1.5 text-xl   font-bold">
             ARAVIND.
           </a>
         </Link>
 
-        {/* Hamburger Button */}
-        <button
+        {/* <button
           onClick={toggleMenu}
-          className="relative ml-auto h-10 w-10 rounded-lg text-white lg:hidden focus:outline-none"
+          className="relative ml-auto h-10 w-10 rounded-lg  lg:hidden focus:outline-none"
           type="button"
         >
           <span className=" absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
@@ -32,14 +26,14 @@ export default function Navbar() {
               strokeWidth="2"
             >
               {isOpen ? (
-                // X icon when open
+             
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   d="M6 18L18 6M6 6l12 12"
                 />
               ) : (
-                // Hamburger icon when closed
+              
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -50,7 +44,7 @@ export default function Navbar() {
           </span>
         </button>
 
-        {/* Nav Links */}
+
         <div
           className={`${
             isOpen ? "block" : "hidden"
@@ -92,7 +86,7 @@ export default function Navbar() {
               </a>
             </li>
           </ul>
-        </div>
+        </div> */}
       </div>
     </nav>
   );

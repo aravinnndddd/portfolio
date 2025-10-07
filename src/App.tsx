@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 
-import Navbar from "./components/navbar";
+import Navbar from "./components/Navbar";
 import {
   Cursor,
   CursorFollow,
@@ -9,8 +9,8 @@ import {
 } from "./components/ui/cursorComponent";
 
 // Pages
-import { Hero } from "./homePage/hero";
-import { Skills } from "./homePage/skills";
+import { Hero } from "./homePage/Hero";
+
 // import { Project } from "./pages/Projects";
 
 function App() {
@@ -20,7 +20,7 @@ function App() {
       <CursorProvider>
         <Cursor>
           <svg
-            className="size-6 text-white"
+            className="size-6 text-black"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 40 40"
           >
@@ -32,7 +32,7 @@ function App() {
         </Cursor>
 
         <CursorFollow>
-          <div className="px-3 py-1 bg-white text-black text-sm rounded-lg shadow-lg">
+          <div className="px-3 py-1 bg-white border-2 border-black text-black text-sm rounded-lg shadow-lg">
             You
           </div>
         </CursorFollow>
@@ -41,7 +41,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Hero />} />
-          <Route path="/skills" element={<Skills />} />
+          {/* <Route path="/skills" element={<Skills />} /> */}
           {/* <Route path="/artworks" element={<Artworks />} /> */}
           {/* <Route path="/projects" element={<Project />} /> */}
           {/* <Route path="/contact" element={<Contact />} /> */}

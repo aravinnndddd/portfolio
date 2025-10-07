@@ -21,6 +21,10 @@ interface Resp {
     name: string;
     state?: string;
     details?: string;
+    timestamps?: {
+      start?: number;
+      end?: number;
+    };
     assets?: {
       large_image?: string;
       small_image?: string;
@@ -70,9 +74,17 @@ const DcStatus: React.FC = () => {
       </div>
     );
   }
+  const getElapsedTime = (start: number) => {
+    const now = Date.now();
+    const diff = now - start;
+    const minutes = Math.floor(diff / 60000);
+    const seconds = Math.floor((diff % 60000) / 1000);
+    return `${minutes}m ${seconds}s`;
+  };
 
   const avatarURL = `https://cdn.discordapp.com/avatars/${data.discord_user.id}/${data.discord_user.avatar}.png`;
 
+  const valoActivity = data.activities.find((a) => a.name === "VALORANT");
   // Find VS Code activity dynamically
   const vsCodeActivity = data.activities.find((a) => a.name === "Code");
 
@@ -83,8 +95,8 @@ const DcStatus: React.FC = () => {
     : undefined;
 
   return (
-    <div className="h-[70vh] flex  ">
-      <div className="w-full  rounded-lg shadow-lg flex flex-col ">
+    <div className="md:h-[50vh] h-[70vh] w-full flex  ">
+      <div className="w-full  rounded-lg px-10 shadow-lg flex flex-col ">
         <div className="flex flex-col mt-5 items-center justify-center">
           <div
             className={`${getStatusColor(
@@ -98,7 +110,7 @@ const DcStatus: React.FC = () => {
             />
           </div>
 
-          <div className="text-white text-center mt-2">
+          <div className="text-black text-center mt-2">
             <p>
               {data.discord_user.username}
               <span className="text-sm text-gray-300">#4999</span>
@@ -113,10 +125,26 @@ const DcStatus: React.FC = () => {
           </div>
         </div>
 
-        <div className="flex w-fit flex-col items-center gap-3 justify-center ">
+        <div className="flex w-full md:flex-row flex-col items-center gap-3 justify-center ">
           {/* VS Code Activity */}
-          <div className=" hover:inset-shadow-white/15 hover:shadow-2xl transition-all duration-500 ease-in  text-[12px] p-3 rounded-3xl flex flex-col items-center inset-shadow-sm inset-shadow-black  bg-white/10  w-[250px]  justify-center text-white">
-            {vsCodeActivity ? (
+          <div className=" hover:inset-shadow-white/15 hover:shadow-2xl transition-all duration-500 ease-in  text-[12px] p-3 rounded-3xl flex flex-col items-center inset-shadow-sm inset-shadow-black  bg-white/10  w-[250px]  justify-center text-black">
+            {valoActivity ? (
+              <div className="flex flex-col items-center gap-2">
+                <p className="text-center  font-extrabold">VALORANT</p>
+
+                <img
+                  src="https://cmsassets.rgpub.io/sanity/images/dsfx7636/news/cbf4460132cdfeb2a97fad5f9dd25ba0bc058f76-128x128.png?w=1200&h=630&fm=webp&fit=crop&crop=center"
+                  className="md:w-[80px] w-[50px] rounded-2xl"
+                  alt="Activity Image"
+                />
+
+                {valoActivity.timestamps?.start && (
+                  <p className="text-xs text-white">
+                    Playing for {getElapsedTime(valoActivity.timestamps.start)}
+                  </p>
+                )}
+              </div>
+            ) : vsCodeActivity ? (
               <>
                 <p className="text-center font-extrabold">VS Code</p>
 
@@ -124,13 +152,13 @@ const DcStatus: React.FC = () => {
                   {vsCodeActivity.assets?.large_image && (
                     <img
                       src={cleanedURL}
-                      className="md:w-[80px] w-[50px]"
+                      className="md:w-[80px] w-[50px]  rounded-2xl"
                       alt="Activity Image"
                     />
                   )}
                   <div>
                     <p className="text-sm">{vsCodeActivity.details}</p>
-                    <p className="text-white font-bold">
+                    <p className="text-black font-bold">
                       {vsCodeActivity.state}
                     </p>
                   </div>
@@ -142,20 +170,20 @@ const DcStatus: React.FC = () => {
           </div>
 
           {/* Spotify */}
-          <div className="  hover:inset-shadow-white/15 hover:shadow-2xl transition-all duration-500 ease-in  text-[12px] p-3 rounded-3xl flex flex-col items-center inset-shadow-sm inset-shadow-black  bg-white/10  w-[250px]  justify-center text-white">
+          <div className="  hover:inset-shadow-white/15 hover:shadow-2xl transition-all duration-500 ease-in  text-[12px] p-3 rounded-3xl flex flex-col items-center inset-shadow-sm inset-shadow-black  bg-white/10  w-[250px]  justify-center text-black">
             {data.spotify?.track_id ? (
               <>
-                <p className="text-center font-semibold">Spotify</p>
+                <p className="text-center font-bold">Spotify</p>
                 <div className="flex items-center gap-2">
                   <img
                     src={data.spotify.album_art_url}
-                    className="w-[50px] md:w-[80px] "
+                    className="w-[50px] md:w-[80px]  rounded-2xl "
                     alt="Album Art"
                   />
 
                   <div>
                     <p className="text-[12px]">{data.spotify.song}</p>
-                    <p className="text-[10px] text-white font-bold md:text-[12px]">
+                    <p className="text-[10px] text-black font-bold md:text-[12px]">
                       by {data.spotify.artist}
                     </p>
                   </div>
