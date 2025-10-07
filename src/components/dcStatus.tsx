@@ -139,7 +139,7 @@ const DcStatus: React.FC = () => {
                 />
 
                 {valoActivity.timestamps?.start && (
-                  <p className="text-xs text-white">
+                  <p className="text-xs text-black">
                     Playing for {getElapsedTime(valoActivity.timestamps.start)}
                   </p>
                 )}
