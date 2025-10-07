@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 
-import Navbar from "./components/Navbar";
+import Navbar from "./components/navbar";
 import {
   Cursor,
   CursorFollow,
@@ -9,7 +9,7 @@ import {
 } from "./components/ui/cursorComponent";
 
 // Pages
-import { Hero } from "./homePage/Hero";
+import { Hero } from "./homePage/hero";
 
 // import { Project } from "./pages/Projects";
 
