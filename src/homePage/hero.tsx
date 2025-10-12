@@ -49,7 +49,7 @@ export function Hero() {
         {/* Social Icons */}
         <div className="mt-10 flex justify-center md:justify-start gap-6">
           <a
-            href="https://www.linkedin.com/in/aravind-p-832849331/"
+            href="https://github.com/aravinnndddd"
             className="p-3 rounded-full border-2 bg-white/80 backdrop-blur-xl text-black font-medium hover:bg-white hover:shadow-black duration-500 hover:shadow-2xl transition"
           >
             <Github className="w-5 h-5 text-black" />
