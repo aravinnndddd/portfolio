@@ -84,7 +84,9 @@ const DcStatus: React.FC = () => {
 
   const avatarURL = `https://cdn.discordapp.com/avatars/${data.discord_user.id}/${data.discord_user.avatar}.png`;
 
-  const valoActivity = data.activities.find((a) => a.name === "VALORANT");
+  const valoActivity = data.activities.find(
+    (a) => a.name === "VALORANT" || a.name === "Valorant"
+  );
   // Find VS Code activity dynamically
   const vsCodeActivity = data.activities.find((a) => a.name === "Code");
 
