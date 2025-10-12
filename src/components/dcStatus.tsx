@@ -98,7 +98,7 @@ const DcStatus: React.FC = () => {
 
   return (
     <div className="md:h-[50vh] h-[70vh] w-full flex  ">
-      <div className="w-full  rounded-lg px-10 shadow-lg flex flex-col ">
+      <div className="w-full  rounded-lg px-10 flex flex-col ">
         <div className="flex flex-col mt-5 items-center justify-center">
           <div
             className={`${getStatusColor(
