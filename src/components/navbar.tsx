@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export default function Navbar() {
   return (
-    <nav className="w-[70%] rounded-4xl px-4 py-2 mx-auto bg-white/50 sticky top-5 shadow lg:px-8 lg:py-3 backdrop-blur-lg  z-[999]">
+    <nav className="w-[70%] rounded-4xl px-4 py-2 mx-auto bg-white sticky top-5 shadow lg:px-8 lg:py-3 backdrop-blur-lg  z-[999]">
       <div className="container flex flex-wrap items-center justify-center font-semibold mx-auto text-black ">
         {/* Logo */}
         <Link to="/">
