@@ -1,4 +1,4 @@
-import { Github, Instagram, Linkedin, Mail, Twitter } from "lucide-react";
+import { Github, Instagram, Linkedin } from "lucide-react";
 import { Projects } from "./projects";
 import { Skills } from "./skills";
 
