@@ -11,12 +11,9 @@ import {
 import { Hero } from "./homePage/hero";
 import { Portfolio } from "./components/portfolio/Portfolio";
 
-// import { Project } from "./pages/Projects";
-
 function App() {
   return (
-    <>
-      {" "}
+    <Router>
       <CursorProvider>
         <Cursor>
           <svg
@@ -36,19 +33,13 @@ function App() {
             You
           </div>
         </CursorFollow>
-      </CursorProvider>
-      <Router>
+
         <Routes>
           <Route path="/" element={<Hero />} />
-
-          <Route path="/Portfolio" element={<Portfolio />} />
-          {/* <Route path="/artworks" element={<Artworks />} /> */}
-          {/* <Route path="/projects" element={<Project />} /> */}
-          {/* <Route path="/contact" element={<Contact />} /> */}
-          {/* <Route path="/footer" element={<Footer />} /> */}
+          <Route path="/portfolio" element={<Portfolio />} />
         </Routes>
-      </Router>
-    </>
+      </CursorProvider>
+    </Router>
   );
 }
 

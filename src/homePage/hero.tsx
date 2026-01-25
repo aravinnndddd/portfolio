@@ -4,8 +4,10 @@ import DcStatus from "@/components/dcStatus";
 import Squares from "@/components/Squares";
 import { Github, Linkedin, Instagram } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export function Hero() {
+  const navigate = useNavigate();
   return (
     <>
       <nav className="w-[80%] rounded-4xl px-4 py-2 mx-auto bg-white sticky top-5 shadow lg:px-8 lg:py-3 backdrop-blur-lg  z-[999]">
@@ -25,9 +27,7 @@ export function Hero() {
     transition-all duration-300 ease-in-out
     hover:bg-white hover:text-black hover:scale-105
     focus:outline-none focus:ring-2 focus:ring-white/70"
-            onClick={() => {
-              window.location.href = "/Portfolio";
-            }}
+            onClick={() => navigate("/portfolio")}
           >
             Go to Portfolio
           </button>
