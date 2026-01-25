@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 export function Hero() {
   return (
     <>
-      <nav className="w-[70%] rounded-4xl px-4 py-2 mx-auto bg-white sticky top-5 shadow lg:px-8 lg:py-3 backdrop-blur-lg  z-[999]">
+      <nav className="w-[80%] rounded-4xl px-4 py-2 mx-auto bg-white sticky top-5 shadow lg:px-8 lg:py-3 backdrop-blur-lg  z-[999]">
         <div className="container flex flex-wrap items-center justify-center font-semibold mx-auto text-black ">
           {/* Logo */}
           <Link to="/">
@@ -16,9 +16,24 @@ export function Hero() {
               ARAVIND.
             </a>
           </Link>
+          <button
+            className="
+    px-6 py-2
+    rounded-full border-2 border-white
+    bg-black/30 text-white text-sm font-extrabold
+    shadow-xl backdrop-blur-sm
+    transition-all duration-300 ease-in-out
+    hover:bg-white hover:text-black hover:scale-105
+    focus:outline-none focus:ring-2 focus:ring-white/70"
+            onClick={() => {
+              window.location.href = "/Portfolio";
+            }}
+          >
+            Go to Portfolio
+          </button>
         </div>
       </nav>
-      <div className="relative md:mt-[-10vh] flex flex-col md:flex-row h-auto md:h-[105vh] w-full bg-white text-black text-center px-6 py-16 md:py-0 overflow-hidden">
+      <div className="relative md:mt-[-10vh] flex flex-col md:flex-row h-[100vh] md:h-[105vh] w-full bg-white text-black text-center px-6 py-16 md:py-0 overflow-hidden">
         {/* Animated Squares Background */}
         <div className="absolute inset-0  pointer-events-none">
           <Squares
@@ -108,22 +123,6 @@ export function Hero() {
             </a>
           </div>
         </div>
-
-        <button
-          className="absolute  z-20  left-1/2 bottom-10 -translate-x-1/2
-    px-6 py-2
-    rounded-full border-2 border-white
-    bg-black/30 text-white text-sm font-extrabold
-    shadow-xl backdrop-blur-sm
-    transition-all duration-300 ease-in-out
-    hover:bg-white hover:text-black hover:scale-105
-    focus:outline-none focus:ring-2 focus:ring-white/70"
-          onClick={() => {
-            window.location.href = "/Portfolio";
-          }}
-        >
-          Portfolio
-        </button>
 
         {/* Right Section - DC Status */}
         <div className="relative z-10 flex justify-center items-center w-full md:w-1/2 mt-10 md:mt-0">

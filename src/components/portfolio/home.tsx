@@ -46,7 +46,7 @@ const EducationItem: React.FC<EducationItemProps> = ({
 export function Home() {
   return (
     <div className="  bg-[url(/assets/bgGrid.avif)] flex justify-center p-4 md:p-8 lg:p-12 selection:bg-yellow-200">
-      <div className="max-w-5xl w-full md:bg-[url(/assets/bg.webp)] bg-white/40 shadow-2xl  p-6 md:p-12 relative overflow-hidden drop-shadow-2xl drop-shadow-black/30">
+      <div className="max-w-5xl w-full bg-[url(/assets/bg.webp)] shadow-2xl  p-6 md:p-12 relative overflow-hidden drop-shadow-2xl drop-shadow-black/30">
         <header className="bg-[#4a4a4a] md:bg-[url(/assets/bg.webp)] md:text-black text-white p-6 md:p-10 mb-12 rough-border relative overflow-hidden md:w-[80%] md:rotate-3 md:-top-8 drop-shadow-2xl drop-shadow-black/30">
           <div className="absolute inset-0 opacity-10 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
 
