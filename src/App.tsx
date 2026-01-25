@@ -1,7 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 
-import Navbar from "./components/navbar";
 import {
   Cursor,
   CursorFollow,
@@ -10,6 +9,7 @@ import {
 
 // Pages
 import { Hero } from "./homePage/hero";
+import { Portfolio } from "./components/portfolio/Portfolio";
 
 // import { Project } from "./pages/Projects";
 
@@ -38,10 +38,10 @@ function App() {
         </CursorFollow>
       </CursorProvider>
       <Router>
-        <Navbar />
         <Routes>
           <Route path="/" element={<Hero />} />
-          {/* <Route path="/skills" element={<Skills />} /> */}
+
+          <Route path="/Portfolio" element={<Portfolio />} />
           {/* <Route path="/artworks" element={<Artworks />} /> */}
           {/* <Route path="/projects" element={<Project />} /> */}
           {/* <Route path="/contact" element={<Contact />} /> */}
