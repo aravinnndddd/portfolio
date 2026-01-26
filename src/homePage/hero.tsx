@@ -10,7 +10,7 @@ export function Hero() {
   const navigate = useNavigate();
   return (
     <>
-      <nav className="w-[80%] rounded-4xl px-4 py-2 mx-auto bg-white sticky top-5 shadow lg:px-8 lg:py-3 backdrop-blur-lg  z-[999]">
+      <nav className="md:w-[30%] rounded-4xl px-4 py-2 mx-auto bg-white sticky top-5 shadow-xl lg:px-8 lg:py-3 backdrop-blur-lg  z-[999]">
         <div className="container flex flex-wrap items-center justify-center font-semibold mx-auto text-black ">
           {/* Logo */}
           <Link to="/">
@@ -20,16 +20,16 @@ export function Hero() {
           </Link>
           <button
             className="
-    px-6 py-2
-    rounded-full border-2 border-white
-    bg-black/30 text-white text-sm font-extrabold
-    shadow-xl backdrop-blur-sm
+    px-2 py-2
+    rounded-full border-2 border-yellow-500
+    bg-yellow-300/30 text-black text-sm font-extrabold
+    shadow-lg shadow-black/30 hover:shadow-none  backdrop-blur-sm
     transition-all duration-300 ease-in-out
-    hover:bg-white hover:text-black hover:scale-105
-    focus:outline-none focus:ring-2 focus:ring-white/70"
+      hover:scale-90
+    "
             onClick={() => navigate("/portfolio")}
           >
-            Go to Portfolio
+            View Portfolio
           </button>
         </div>
       </nav>
