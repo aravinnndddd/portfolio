@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import styles from "./app.module.css";
 
 const USER_ID = "754961569858846770";
-const API_URL = `https://discord-echo-o85u.onrender.com/api/activities/${USER_ID}`;
+const API_URL = `https://discord-echo-u4ak.onrender.com/api/activities/${USER_ID}`;
 
 interface Activity {
   name: string;
